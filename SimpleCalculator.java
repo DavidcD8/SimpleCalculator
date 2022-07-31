@@ -86,11 +86,11 @@ public class SimpleCalculator {
 		System.out.println(results);
 	}
 
-	// dataProcessor to prompt user for input and proccess the value of results from
+	// dataProcessor to prompt user for input and process the value of results from
 	// method firstData
 	public static void dataProcessor() {
 		// local variable
-		double totalToBeProccessed = 0;
+		double totalToBeProcessed = 0;
 		String symbol;
 		boolean runingLoop2 = true;
 
@@ -98,15 +98,15 @@ public class SimpleCalculator {
 		while (runingLoop2) {
 			Scanner sc = new Scanner(System.in);
 			System.out.println("Enter a number: ");
-			totalToBeProccessed = sc.nextDouble();
+			totalToBeProcessed = sc.nextDouble();
 			System.out.println("Enter Symbol: ");
 			symbol = sc.next();
 
 			// condition to warn user about not dividing by 0
-			if (symbol.equals("/") && (totalToBeProccessed == 0)) {
+			if (symbol.equals("/") && (totalToBeProcessed == 0)) {
 				System.out.println("You can't divide by 0");
 				continue;
-			} else if (symbol.equals("/") && (totalToBeProccessed > 0)) {
+			} else if (symbol.equals("/") && (totalToBeProcessed > 0)) {
 
 			}
 
@@ -114,24 +114,24 @@ public class SimpleCalculator {
 			switch (symbol) {
 			case "+":
 
-				results += totalToBeProccessed;
+				results += totalToBeProcessed;
 
 				break;
 
 			case "-":
-				results -= totalToBeProccessed;
+				results -= totalToBeProcessed;
 				break;
 
 			case "/":
-				results /= totalToBeProccessed;
+				results /= totalToBeProcessed;
 				break;
 
 			case "*":
-				results *= totalToBeProccessed;
+				results *= totalToBeProcessed;
 				break;
 
 			case "%":
-				results = results * totalToBeProccessed / 100;
+				results = results * totalToBeProcessed / 100;
 				break;
 			}
 			System.out.println(results);
