@@ -30,13 +30,13 @@ public class SimpleCalculator {
 				System.out.println("Enter a number: ");
 				digitOne = sc.nextDouble();
 
-				// loop to prevent user from entering wrong input
-
+					
 				System.out.println("Enter sign: +,-,/,*,");
 				operator = sc.next().charAt(0);
+				
+				//condition to prevent dividing by zero
 				if (operator == ('+') || (operator == ('-') || (operator == ('/') || (operator == ('*'))))) {
-
-					System.out.println("Enter second number: ");
+				    System.out.println("Enter second number: ");
 					digitTwo = sc.nextDouble();
 				}
 
@@ -87,6 +87,7 @@ public class SimpleCalculator {
 	// dataProcessor to prompt user for input and process the value of results from
 	// method firstData
 	public static void dataProcessor() {
+		
 		// local variable
 		double totalToBeProcessed = 0;
 		String symbol;
@@ -95,18 +96,18 @@ public class SimpleCalculator {
 		// for loop to prompt user for inputs
 		while (runingLoop2) {
 			Scanner sc = new Scanner(System.in);
+			
 			System.out.println("Enter a number: ");
 			totalToBeProcessed = sc.nextDouble();
+			
 			System.out.println("Enter Symbol: ");
-			symbol = sc.next();
+			symbol = sc.next();  
 
-			// condition to warn user about not dividing by 0
+			// condition to handle division by 0
 			if (symbol.equals("/") && (totalToBeProcessed == 0)) {
 				System.out.println("You can't divide by 0");
 				continue;
-			} else if (symbol.equals("/") && (totalToBeProcessed > 0)) {
-
-			}
+			} 
 
 			// Switch statement to assign the right equation
 			switch (symbol) {
