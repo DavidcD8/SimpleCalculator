@@ -1,14 +1,94 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.awt.GridLayout;
 import java.lang.Math.*;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 
 public class SimpleCalculator {
 
 	// instance variable to holds values
 	private static double results = 0;
 	static Scanner sc = new Scanner(System.in);
-
+	private static JTextField jtfAnswer;
+	 
 	public static void main(String[] args) {
+
+		// frame object
+		JFrame frame = new JFrame();
+
+		// Create panel1 to hold the text field
+
+		
+		JPanel panel1 = new JPanel(new GridLayout(2,2) );
+		 
+		 jtfAnswer = new JTextField(20);
+			panel1.add(jtfAnswer);
+		  jtfAnswer.setEditable(false);
+		 
+		
+		
+		 
+ 
+		// Create panel2 to hold buttons
+		JPanel panel2 = new JPanel();
+		 panel2.setLayout(new GridLayout(4,4,2,2)); // flow layout manager by default
+
+		JPanel panel4 = new JPanel(new GridLayout(2,2));
+		panel4.add(panel1, BorderLayout.NORTH);
+		panel4.add(panel2, BorderLayout.CENTER);
+
+		// Create a JButton object
+				JButton buttonOne = new JButton("1");
+				JButton buttonTwo = new JButton("2");
+				JButton buttonThree = new JButton("3");
+				JButton buttonFour = new JButton("4");
+				JButton buttonfive = new JButton("5");
+				JButton buttonSix = new JButton("6");
+				JButton buttonSeven = new JButton("7");
+				JButton buttonEight = new JButton("8");
+				JButton buttonNine = new JButton("9");
+				JButton buttonCero = new JButton("0");
+				JButton buttonDiv = new JButton("/");
+				JButton buttonMul = new JButton("*");
+				JButton buttonAdd = new JButton("-");
+				JButton buttonSub = new JButton("+");
+				JButton buttonPer = new JButton("%");
+				JButton buttonDel = new JButton("←");
+
+				// add bottons to panel2
+				panel2.add(buttonOne);
+				panel2.add(buttonTwo);
+				panel2.add(buttonThree);
+				panel2.add(buttonDel);
+				panel2.add(buttonFour);
+				panel2.add(buttonfive);
+				panel2.add(buttonSix);
+				panel2.add(buttonDiv);
+				panel2.add(buttonSeven);
+				panel2.add(buttonEight);
+				panel2.add(buttonNine);
+				panel2.add(buttonMul);
+				panel2.add(buttonPer);
+				panel2.add(buttonCero);
+				panel2.add(buttonAdd);
+				panel2.add(buttonSub);
+
+		// Center the frame
+		frame.setLocationRelativeTo(null);
+		// Close the frame upon exit
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		// Display the frame
+		frame.setVisible(true);
+		// Set the frame size
+		frame.setSize(300, 450); // 400 pixels wide and 300 pixels high
+		frame.add(panel4);
+		frame.setTitle("Calculator");
+
 		// Calling methods in main
 		firstData();
 		dataProcessor();
