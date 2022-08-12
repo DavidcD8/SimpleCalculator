@@ -93,7 +93,7 @@ public class SimpleCalculator {
 		String symbol;
 		boolean runingLoop2 = true;
 
-		// for loop to prompt user for inputs
+		// loop to prompt user for inputs
 		while (runingLoop2) {
 			Scanner sc = new Scanner(System.in);
 			
