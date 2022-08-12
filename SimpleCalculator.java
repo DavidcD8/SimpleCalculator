@@ -18,7 +18,7 @@ public class SimpleCalculator {
 	public static void firstData() {
 		double digitOne = 0;
 		double digitTwo = 0;
-		char operator = 0;
+		char operator ;
 		boolean runingLoop1 = true;
 		boolean innerLoop = true;
 
